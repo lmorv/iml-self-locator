@@ -105,53 +105,12 @@
 				},
 				{
 					"mode": "button",
-					"path": "/user/hand/right/input/a",
-					"inputs":
-					{
-						"click":
-						{
-							"output": "/actions/main/in/Action_ResetExamples"
-						}
-					}
-				},
-				{
-					"mode": "button",
 					"path": "/user/hand/right/input/b",
 					"inputs":
 					{
 						"click":
 						{
 							"output": "/actions/main/in/Action_ResetModel"
-						}
-					}
-				},
-				{
-					"mode": "dpad",
-					"path": "/user/hand/left/input/thumbstick",
-					"parameters":
-					{
-						"sub_mode": "touch"
-					},
-					"inputs":
-					{
-						"south":
-						{
-							"output": "/actions/main/in/Action_SelectNextLabelRow"
-						}
-					}
-				},
-				{
-					"mode": "dpad",
-					"path": "/user/hand/left/input/thumbstick",
-					"parameters":
-					{
-						"sub_mode": "touch"
-					},
-					"inputs":
-					{
-						"north":
-						{
-							"output": "/actions/main/in/Action_SelectPreviousLabelRow"
 						}
 					}
 				},
@@ -163,6 +122,17 @@
 						"touch":
 						{
 							"output": "/actions/main/in/ShowHideMenu"
+						}
+					}
+				},
+				{
+					"mode": "button",
+					"path": "/user/hand/right/input/a",
+					"inputs":
+					{
+						"click":
+						{
+							"output": "/actions/main/in/Action_DeleteLastExample"
 						}
 					}
 				},
@@ -180,28 +150,6 @@
 				{
 					"mode": "scalar_constant",
 					"path": "/user/hand/left/input/joystick",
-					"inputs":
-					{
-						"value":
-						{
-							"output": ""
-						}
-					}
-				},
-				{
-					"mode": "scalar_constant",
-					"path": "/user/hand/right/input/joystick",
-					"inputs":
-					{
-						"value":
-						{
-							"output": "/actions/main/in/MotionControllerThumbRight_X,MotionControllerThumbRight_Y X Y_axis2d"
-						}
-					}
-				},
-				{
-					"mode": "scalar_constant",
-					"path": "/user/hand/right/input/joystick",
 					"inputs":
 					{
 						"value":
@@ -244,5 +192,5 @@
 			]
 		}
 	},
-	"description": "InteractMLUE-15973114"
+	"description": "InteractMLDemos-20979098"
 }

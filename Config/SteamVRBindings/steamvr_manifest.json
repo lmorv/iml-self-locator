@@ -184,7 +184,7 @@
 			"type": "boolean"
 		},
 		{
-			"name": "/actions/main/in/Action_ResetExamples",
+			"name": "/actions/main/in/Action_DeleteAllExamples",
 			"type": "boolean"
 		},
 		{
@@ -192,15 +192,11 @@
 			"type": "boolean"
 		},
 		{
-			"name": "/actions/main/in/Action_SelectNextLabelRow",
-			"type": "boolean"
-		},
-		{
-			"name": "/actions/main/in/Action_SelectPreviousLabelRow",
-			"type": "boolean"
-		},
-		{
 			"name": "/actions/main/in/ShowHideMenu",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/main/in/Action_DeleteLastExample",
 			"type": "boolean"
 		},
 		{
@@ -477,11 +473,10 @@
 			"/actions/main/in/TeleportRight": "TeleportRight",
 			"/actions/main/in/Action_SelectNextLabel": "Action_SelectNextLabel",
 			"/actions/main/in/Action_SelectPreviousLabel": "Action_SelectPreviousLabel",
-			"/actions/main/in/Action_ResetExamples": "Action_ResetExamples",
+			"/actions/main/in/Action_DeleteAllExamples": "Action_DeleteAllExamples",
 			"/actions/main/in/Action_ResetModel": "Action_ResetModel",
-			"/actions/main/in/Action_SelectNextLabelRow": "Action_SelectNextLabelRow",
-			"/actions/main/in/Action_SelectPreviousLabelRow": "Action_SelectPreviousLabelRow",
 			"/actions/main/in/ShowHideMenu": "ShowHideMenu",
+			"/actions/main/in/Action_DeleteLastExample": "Action_DeleteLastExample",
 			"/actions/main/in/MotionControllerThumbLeft_X,MotionControllerThumbLeft_Y X Y_axis2d": "MotionControllerThumbLeft",
 			"/actions/main/in/MotionControllerThumbRight_X,MotionControllerThumbRight_Y X Y_axis2d": "MotionControllerThumbRight",
 			"/actions/main/in/Axis_MoveForward axis": "Axis_MoveForward",
