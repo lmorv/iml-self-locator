@@ -148,6 +148,17 @@
 					}
 				},
 				{
+					"mode": "joystick",
+					"path": "/user/hand/left/input/joystick",
+					"inputs":
+					{
+						"click":
+						{
+							"output": "/actions/main/in/ShowHideMenu"
+						}
+					}
+				},
+				{
 					"mode": "button",
 					"path": "/user/hand/right/input/a",
 					"inputs":
