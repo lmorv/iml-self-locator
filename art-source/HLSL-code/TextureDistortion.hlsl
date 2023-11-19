@@ -1,5 +1,11 @@
 float3 rayStep = viewDir * -1; // for Raymarching
+float depthValue = depth;
 float4 color;
+
+float distMag = magnitude;
+float distFreq = frequency;
+float distSpeed = speed;
+float primDistStr = primDistStrength;
 
 struct texDistort
 {
@@ -18,15 +24,12 @@ struct texDistort
 
     float2 texDistortion(float2 uv, float time)
     {
-        float angle = atan2(uv.y - 0.5, uv.x - 05); // angle from uv coord to center of uv space
+        float angle = atan2(uv.y - 0.5, uv.x - 0.5); // angle from uv coord to center of uv space
         float radius = length(uv - 0.5); // distance from uv coord to center of uv space
 
-        // float magnitude = 4;
-        // float frequency = 3;
-        // float speed = 2;
 
-        float distortion = 4 * sin(3 * radius + 2 * time); // sin wave distortion by a magnitude, frequency and speed value.
-        float primDist = sin(6.0 * angle) * distortion; // secon layer of distortion. 6.0 is an intensity value
+        float distortion = distMag * sin(distFreq * radius + distSpeed * time); // sin wave distortion by a magnitude, frequency and speed value.
+        float primDist = sin(primDistStrength * angle) * distortion; // secon layer of distortion. 6.0 is an intensity value
 
         return texRotate(uv, primDist);
     }
@@ -35,18 +38,18 @@ texDistort txd; // Give the struct a propper name
 
 for (int i = 0; i < 5; i++)
 {
-    color = Texture2DSampler(texObject, texObjectSampler, txd.texDistortion(uv, time));
+    color = Texture2DSample(texObject, texObjectSampler, txd.texDistortion(uv, time));
 
     if(color.r > 0.1 && color.g > 0.1 && color.b > 0.1)
     {
         return color * float3(1,0,0); // color multiplied by a red value
     }
-    else if(color.r > 0.1 && color.g > 0.1 && color.b > 0.1)
+    else if(color.r > 0.01 && color.g > 0.01 && color.b > 0.01)
     {   
         return color * float3(0,1,1); // Color multiplied by green/blue value
     }
 
-    uv += rayStep * 1.5;
+    uv += rayStep * depth;
 }
 
 return(color);
